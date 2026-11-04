@@ -40,20 +40,20 @@ sudo /var/ossec/bin/manage_agents
 # (E)xtract key for the agent
 ```
 
-![Manager install, IP, and agent registration](screenshots/01-manager-setup.jpg)
+<img width="1905" height="967" alt="photo_6293783554906854139_w" src="https://github.com/user-attachments/assets/3eb2edbc-7068-4eba-96e4-c2793b0731c0" />
 
 ### 3. Install and enroll the Windows agent
 
 Installed the Wazuh agent on Windows, entered the **manager IP** and the **authentication key** extracted in the previous step, and restarted the agent. The agent status showed **Running**.
 
-![Windows Wazuh agent](screenshots/02-windows-agent.jpg)
+<img width="396" height="345" alt="photo_6293783554906854099_x" src="https://github.com/user-attachments/assets/b7d8b068-ea2b-420e-be8e-758361443a7a" />
 
 ### 4. Verify the agent in the dashboard
 
 The agent appeared as **Active** (Windows 11 Home, group `default`, version 4.14.9).
 
-![Endpoints overview](screenshots/03-endpoints.jpg)
-![Agent overview](screenshots/04-agent-overview.jpg)
+<img width="1917" height="971" alt="photo_6293783554906854105_w" src="https://github.com/user-attachments/assets/714275df-8dde-4e9e-b96d-6ba154a49a19" />
+<img width="1917" height="972" alt="photo_6293783554906854100_w" src="https://github.com/user-attachments/assets/def00bf5-a572-4d3c-8545-ec1ac085edf7" />
 
 ### 5. Configure FIM
 
@@ -70,7 +70,7 @@ Edited the agent's `ossec.conf` and added a monitored directory with `realtime="
 
 Restarted the agent to apply the change.
 
-![ossec.conf FIM configuration](screenshots/05-ossec-conf.jpg)
+<img width="1917" height="855" alt="photo_6293783554906854102_w" src="https://github.com/user-attachments/assets/406200b7-bbfb-417f-96cf-460a23699f26" />
 
 ### 6. Generate test events
 
@@ -88,11 +88,11 @@ Wazuh detected every change and mapped each to a rule:
 
 For modified files, Wazuh recorded the **old and new MD5, SHA-1, and SHA-256 hashes**, which is how FIM proves a file's content changed. Events were tagged with `Mode: realtime`, confirming real-time monitoring worked.
 
-![FIM events](screenshots/06-fim-events.jpg)
-![File added event](screenshots/07-event-added.jpg)
-![File deleted event](screenshots/08-event-deleted.jpg)
-![Checksum changed event](screenshots/09-event-modified.jpg)
-![FIM dashboard](screenshots/10-fim-dashboard.jpg)
+<img width="1917" height="961" alt="photo_6293783554906854101_w" src="https://github.com/user-attachments/assets/9bbc708b-b7c8-4809-9537-cf56c07ce9a1" />
+<img width="1917" height="966" alt="photo_6293783554906854104_w" src="https://github.com/user-attachments/assets/b9f48b28-cf6d-46d1-a8e8-983367ae1b52" />
+<img width="1917" height="972" alt="photo_6293783554906854103_w" src="https://github.com/user-attachments/assets/5dcece37-bb45-4f00-a2eb-cab6fb08068f" />
+<img width="1917" height="966" alt="photo_6293783554906854131_w (1)" src="https://github.com/user-attachments/assets/538bddc5-bc59-4bab-8cc6-25f550fe3616" />
+<img width="1917" height="966" alt="photo_6293783554906854130_w" src="https://github.com/user-attachments/assets/ff55d457-06a5-48a2-b20d-c0f418269b5b" />
 
 The agent overview also showed Wazuh's built-in mapping of findings to **MITRE ATT&CK** (Defense Evasion) and compliance frameworks such as **PCI DSS**.
 
